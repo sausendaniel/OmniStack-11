@@ -1,9 +1,8 @@
 {
-  "name": "backend",
-  "version": "0.1.0",
+  "name": "os11-backend",
+  "version": "1.0.0",
   "description": "Omnistack 11 - Backend",
   "author": "Daniel Sausen",
-  "keywords": [],
   "license": "ISC",
   "main": "index.js",
   "scripts": {

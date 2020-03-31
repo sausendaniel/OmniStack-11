@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+
+:root {
+  --b400: #0052CC;
+  --g400: #00875A;
+  --n400: #505F79;
+  --n20: #F4F5F7;
 }
 
-.App-logo {
-  height: 40vmin;
+:required {
+  box-shadow: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 400 1em/1 Rubik, sans-serif;
+  background-color: var(--n20);
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+  font: 400 1em/1 Rubik, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
   pointer-events: none;
+  user-select: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Login {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.Form {
+  width: 100%;
+  max-width: 360px;
+  margin-right: 2em;
+}
+
+.Form > form {
+  margin-top: 6em;
+}
+
+.Form h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: var(--b400);
+}
+
+.Form input {
+  width: 100%;
+  height: 4em;
+  color: var(--n400);
+  border: 0.125em solid var(--n20);
+  border-radius: 0.5em;
+  padding: 0 1.5em;
+  transition: border-color 0.35s;
+}
+
+.Form input:focus, .Form input:hover {
+  border-color: var(--b400);
+}
+
+.Form input:not(:placeholder-shown) {
+  border-color: #dc3545;
+}
+
+.Form input:valid {
+  border-color: var(--g400) !important;
+}
+
+.Form button {
+  width: 100%;
+  height: 4em;
+  background-color: #FFF;
+  color: var(--b400);
+  border: 0.125em solid var(--n20);
+  border-radius: 0.5em;
+  font-weight: bold;
+  margin-top: 1em;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.125em;
+  line-height: 4em;
+
+  transition: 0.35s ease all;
+  background-position: center;
+  outline: none;
+}
+
+.Form button:hover {
   color: white;
+  border-color: var(--b400);
+  background: var(--b400) radial-gradient(circle, transparent 1%, rgba(255,255,255,0.2) 1%) center/15000%;
+  filter: brightness(90%);
 }
 
-.App-link {
-  color: #61dafb;
+.Form button:active {
+  background-color: var(--b400);
+  background-size: 100%;
+  transition: background 0s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Form a {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5em;
+  font-size: 1.25em;
+  text-decoration: none;
+  color: var(--n400);
+  transition: 0.2s ease all;
+}
+
+.Form a:hover {
+  color: var(--b400);
+}
+
+.Form a > svg {
+  margin-right: 0.5em;
+}
+
+@media(max-width: 768px) {
+  .Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
   }
-  to {
-    transform: rotate(360deg);
+  .Heroes {
+    position: fixed;
+    z-index: -1;
+    opacity: 0.2;
+    padding: 1em;
   }
 }
